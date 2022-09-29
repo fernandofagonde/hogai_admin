@@ -65,7 +65,7 @@ return [
 
     'logo' => '<b>Hogai</b> Admin',
     'logo_img' => 'img/hogai-logo.png',
-    'logo_img_class' => 'brand-image elevation-3 sidebar-dark-lightblue',
+    'logo_img_class' => 'brand-image elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
     'logo_img_alt' => 'Hogai Logo',
@@ -109,8 +109,8 @@ return [
     'preloader' => [
         'enabled' => true,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-            'alt' => 'AdminLTE Preloader Image',
+            'path' => 'img/hogai-logo.png',
+            'alt' => 'HOGAI',
             'effect' => 'animation__shake',
             'width' => 60,
             'height' => 60,
@@ -187,14 +187,14 @@ return [
     */
 
     'classes_body' => 'sidebar-mini layout-fixed control-sidebar-slide-open text-sm',
-    'classes_brand' => 'sidebar-dark-lightblue',
+    'classes_brand' => '',
     'classes_brand_text' => '',
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
     'classes_sidebar' => 'sidebar-dark-primary elevation-4',
     'classes_sidebar_nav' => '',
-    'classes_topnav' => 'navbar-light bg-lightblue',
+    'classes_topnav' => 'navbar-light',
     'classes_topnav_nav' => 'navbar-expand',
     'classes_topnav_container' => 'container',
 
@@ -313,6 +313,7 @@ return [
             'text'    => 'Pessoas',
             'icon'    => 'fas fa-fw fa-user',
             'submenu' => [
+                //usuarios
                 [
                     'text' => 'Cadastros',
                     'icon'    => 'fas fa-fw fa-plus-square',                    
@@ -331,6 +332,7 @@ return [
                 ],
             ],
         ],       
+        //contas a pagar
         [
             'text'    => 'Contas a Pagar',
             'icon'    => 'fas fa-fw fa-user',
@@ -348,6 +350,8 @@ return [
                 
             ],
         ], 
+
+        //contas a receber
         [
             'text'    => 'Contas a Receber',
             'icon'    => 'fas fa-fw fa-user',
@@ -363,7 +367,44 @@ return [
                     'url'  => '#',
                 ],
             ],
+        ],          
+        //eventos
+        [
+            'text'    => 'Eventos',
+            'icon'    => 'fas fa-fw fa-calendar',
+            'submenu' => [
+                [
+                    'text' => 'Cadastros',
+                    'icon'    => 'fas fa-fw fa-plus-square',                    
+                    'url'  => '#',
+                ],                
+                [
+                    'text' => 'Relatorios',
+                    'icon'    => 'fas fa-fw fa-file',
+                    'url'  => '#',
+                ],
+            ],
+        ],   
+        
+        //CMS
+        [
+            'text'    => 'Gerenciar Páginas',
+            'icon'    => 'fas fa-fw fa-file',
+            'submenu' => [
+                [
+                    'text' => 'Cadastros',
+                    'icon'    => 'fas fa-fw fa-plus-square',                    
+                    'url'  => '#',
+                ],                
+                [
+                    'text' => 'Relatorios',
+                    'icon'    => 'fas fa-fw fa-file',
+                    'url'  => '#',
+                ],
+            ],
         ],             
+
+
     ],
 
     /*
