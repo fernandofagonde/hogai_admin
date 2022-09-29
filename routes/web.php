@@ -27,6 +27,23 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Auth::routes();
 
-Route::get('/home', function() {
+Route::get('/home', function () {
     return view('home');
 })->name('home')->middleware('auth');
+
+/*
+    |--------------------------------------------------------------------------
+    | Pessoas
+    |--------------------------------------------------------------------------
+    */
+$prefix = 'pessoas';
+$controller = 'PessoasController';
+
+Route::group(['prefix' => $prefix, 'as' => $prefix . '.'], function () use ($controller) {
+    Route::get('/',          [App\Http\Controllers\PessoasController::class, 'index'])->name('pessoas.index');
+    Route::get('/create',    [App\Http\Controllers\PessoasController::class, 'create'])->name('pessoas.create');
+    Route::post('/',         [App\Http\Controllers\PessoasController::class, 'store'])->name('pessoas.store');
+    Route::get('/{id}/edit', [App\Http\Controllers\PessoasController::class, 'edit'])->name('pessoas.edit');
+    Route::put('/{id}',      [App\Http\Controllers\PessoasController::class, 'update'])->name('pessoas.update');
+    Route::delete('/{id}',   [App\Http\Controllers\PessoasController::class, 'destroy'])->name('pessoas.destroy');
+});
