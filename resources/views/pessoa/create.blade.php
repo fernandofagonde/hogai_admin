@@ -1,15 +1,11 @@
-@extends('layouts.layout-1')
+@extends('adminlte::page')
 
 @section('title', 'Criando pessoa - Pessoas')
 
 @section('content')
-    @component('components.page-header')
-        @slot('title', 'Criando pessoa')
-    @endcomponent
-
-    <form action="{{ route('pessoas.store') }}" method="post">
+    <form action="{{ route('pessoa.pessoa.store') }}" method="post">
         @csrf
 
-        @include('pessoas._form')
+        @include('pessoa._form')
     </form>
 @endsection

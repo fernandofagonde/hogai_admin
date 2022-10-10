@@ -15,9 +15,7 @@
                     <span class="info-box-text">Mensagens</span>
                     <span class="info-box-number">1,410</span>
                 </div>
-
             </div>
-
         </div>
 
         <div class="col-md-3 col-sm-6 col-12">
@@ -27,9 +25,7 @@
                     <span class="info-box-text">Pessoas</span>
                     <span class="info-box-number">410</span>
                 </div>
-
             </div>
-
         </div>
 
         <div class="col-md-3 col-sm-6 col-12">
@@ -39,9 +35,7 @@
                     <span class="info-box-text">Contas a Receber</span>
                     <span class="info-box-number">R$ 3.648,00</span>
                 </div>
-
             </div>
-
         </div>
 
         <div class="col-md-3 col-sm-6 col-12">
@@ -51,18 +45,12 @@
                     <span class="info-box-text">Contas a pagar</span>
                     <span class="info-box-number">R$ 1.648,00</span>
                 </div>
-
             </div>
-
         </div>
-
     </div>
 
     <div class="row">
-
         <section class="col-lg-7 connectedSortable ui-sortable">
-
-
             <div class="card">
                 <div class="card-header ui-sortable-handle" style="cursor: move;">
                     <h3 class="card-title">
@@ -79,25 +67,19 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="card-body">
                     <ul class="todo-list ui-sortable" data-widget="todo-list">
                         <li>
-
                             <span class="handle ui-sortable-handle">
                                 <i class="fas fa-ellipsis-v"></i>
                                 <i class="fas fa-ellipsis-v"></i>
                             </span>
-
                             <div class="icheck-primary d-inline ml-2">
                                 <input type="checkbox" value="" name="todo1" id="todoCheck1">
                                 <label for="todoCheck1"></label>
                             </div>
-
                             <span class="text">Design a nice theme</span>
-
                             <small class="badge badge-danger"><i class="far fa-clock"></i> 2 mins</small>
-
                             <div class="tools">
                                 <i class="fas fa-edit"></i>
                                 <i class="fas fa-trash-o"></i>
@@ -185,27 +167,21 @@
                         </li>
                     </ul>
                 </div>
-
                 <div class="card-footer clearfix">
                     <button type="button" class="btn btn-primary float-right"><i class="fas fa-plus"></i> Add
                         item</button>
                 </div>
             </div>
-
         </section>
 
-
         <section class="col-lg-5 connectedSortable ui-sortable">
-
             <div class="card bg-gradient-success">
                 <div class="card-header border-0 ui-sortable-handle" style="cursor: move;">
                     <h3 class="card-title">
                         <i class="far fa-calendar-alt"></i>
                         Calendar
                     </h3>
-
                     <div class="card-tools">
-
                         <div class="btn-group">
                             <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown"
                                 data-offset="-52">
@@ -225,11 +201,8 @@
                             <i class="fas fa-times"></i>
                         </button>
                     </div>
-
                 </div>
-
                 <div class="card-body pt-0">
-
                     <div id="calendar" style="width: 100%">
                         <div class="bootstrap-datetimepicker-widget usetwentyfour">
                             <ul class="list-unstyled">
@@ -478,11 +451,8 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </section>
-
     </div>
 @stop
 

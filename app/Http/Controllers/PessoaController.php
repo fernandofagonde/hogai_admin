@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Requests\PessoaRequest;
+use App\Models\Pessoa;
 
 use Illuminate\Http\Request;
 
@@ -23,13 +25,28 @@ class PessoaController extends Controller
     }
 
     public function create()
-    {        
-        return view('pessoa.create');
+    {   
+        $pessoa = new Pessoa();
+        $is_edit = false;
+        session()->flash('notice', [
+            'type' => 'success',
+            'message' => config('app.messages.actions.insert'),
+        ]);
+
+        return view('pessoa.create', compact('pessoa'));
     }
 
-    public function store()
+    public function store(PessoaRequest $request)
     {
-        return redirect()->route('pessoa.index');
+        $pessoa = $this->pessoas->fill($request->all());
+        $pessoa->save();
+
+        session()->flash('notice', [
+            'type' => 'success',
+            'message' => config('app.messages.actions.insert'),
+        ]);
+
+        return redirect()->route('pessoa.pessoa.index');
     }
 
     public function edit()

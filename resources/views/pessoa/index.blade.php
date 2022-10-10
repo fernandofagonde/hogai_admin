@@ -2,77 +2,34 @@
 
 @section('title', 'Pessoas')
 
-@section('content-header')
-
-@endsection
-
+@section('content_header')
+    <h1>Pessoas</h1>
+@stop
 
 @section('content')
-
-    <div class="row ">
-        <div class="col-sm-6">
-            <h1>Pessoas</h1>
-        </div>
-        <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active">Pessoas</li>
-            </ol>
-        </div>
-    </div>
-
+@if (session()->has('message'))
+<div class="alert alert-success">
+    {{ session('message') }}
+</div>
+@endif
     <div class="row">
-        <div class="col-md-12">
-            <div class="card ">
-                <div class="card-header">
-                    <h3 class="card-title">Filtros</h3>
-                </div>
-                <form>
-                    <div class="card-body col-md-12">
-                        <div class="row">
-                            <div class="col-md-5">
-                                <div class="input-group input-group-sm">
-
-                                    <input type="email" class="form-control form-control-border" id="exampleInputEmail1"
-                                        placeholder="Enter email">
-                                </div>
-                            </div>
-                            <div class="col-md-5">
-                                <div class="input-group input-group-sm">
-                                    <input type="password" class="form-control form-control-border"
-                                        id="exampleInputPassword1" placeholder="Password">
-                                </div>
-                            </div>
-
-                            <div class="col-md-2">
-                                <button type="submit" class="btn btn-primary btn-xs">Pesquisar</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-    </div>
-    <div class="row">
-        <div class="col-12">
+        <section class="col-lg-12 connectedSortable ui-sortable">
             <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">Responsive Hover Table</h3>
-
+                <div class="card-header ui-sortable-handle" style="cursor: move;">
+                    <h3 class="card-title">
+                        <i class="ion ion-clipboard mr-1"></i>
+                        Pessoas cadastradas
+                    </h3>
                     <div class="card-tools">
-                        <div class="input-group input-group-sm" style="width: 150px;">
-                            <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-
-                            <div class="input-group-append">
-                                <button type="submit" class="btn btn-default">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                            </div>
-                        </div>
+                        <ul class="pagination pagination-sm">
+                            <li class="page-item"><a href="#" class="page-link">«</a></li>
+                            <li class="page-item"><a href="#" class="page-link">1</a></li>
+                            <li class="page-item"><a href="#" class="page-link">2</a></li>
+                            <li class="page-item"><a href="#" class="page-link">3</a></li>
+                            <li class="page-item"><a href="#" class="page-link">»</a></li>
+                        </ul>
                     </div>
                 </div>
-                <!-- /.card-header -->
                 <div class="card-body table-responsive p-0">
                     <table class="table table-hover text-nowrap">
                         <thead>
@@ -82,6 +39,7 @@
                                 <th>Date</th>
                                 <th>Status</th>
                                 <th>Reason</th>
+                                <th>Ações</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -91,6 +49,8 @@
                                 <td>11-7-2014</td>
                                 <td><span class="tag tag-success">Approved</span></td>
                                 <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                                <td><button type="button" class="btn btn-primary float-right"><i class="fas fa-edit"></i>
+                                    </button></td>
                             </tr>
                             <tr>
                                 <td>219</td>
@@ -98,6 +58,8 @@
                                 <td>11-7-2014</td>
                                 <td><span class="tag tag-warning">Pending</span></td>
                                 <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                                <td><button type="button" class="btn btn-primary float-right"><i class="fas fa-edit"></i>
+                                    </button></td>
                             </tr>
                             <tr>
                                 <td>657</td>
@@ -105,6 +67,8 @@
                                 <td>11-7-2014</td>
                                 <td><span class="tag tag-primary">Approved</span></td>
                                 <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                                <td><button type="button" class="btn btn-primary float-right"><i class="fas fa-edit"></i>
+                                    </button></td>
                             </tr>
                             <tr>
                                 <td>175</td>
@@ -112,15 +76,31 @@
                                 <td>11-7-2014</td>
                                 <td><span class="tag tag-danger">Denied</span></td>
                                 <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                                <td><button type="button" class="btn btn-primary float-right"><i class="fas fa-edit"></i>
+                                    </button></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                <!-- /.card-body -->
+                <div class="card-footer clearfix">
+                    <div class="row">
+                        <div class="col-md-10"></div>
+                        <div class="col-md-2">
+                            @component('components.create-btn')
+                                @slot('route', 'pessoa.pessoa.create')
+                                @slot('title', 'Criar pessoa')
+                            @endcomponent
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- /.card -->
-        </div>
+        </section>
     </div>
+@stop
 
+@section('css')
+    <link rel="stylesheet" href="/css/admin_custom.css">
+@stop
 
-@endsection
+@section('js')
+@stop
