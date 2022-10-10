@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class PessoasController extends Controller
+class PessoaController extends Controller
 {
   
     /**
-     * @var Pessoas
+     * @var Pessoa
      */
-    private $pessoas;
+    private $pessoa;
 
     public function __construct()
     {
@@ -19,34 +19,34 @@ class PessoasController extends Controller
 
     public function index()
     {        
-        return view('pessoas.index');
+        return view('pessoa.index');
     }
 
     public function create()
     {        
-        return view('pessoas.create');
+        return view('pessoa.create');
     }
 
     public function store()
     {
-        return redirect()->route('pessoas.index');
+        return redirect()->route('pessoa.index');
     }
 
     public function edit()
     {
-        return view('pessoas.edit');
+        return view('pessoa.edit');
     }
 
     public function update()
     {
-        return redirect()->route('pessoas.index');
+        return redirect()->route('pessoa.index');
     }
 
     public function destroy()
     {
         return response()->json([
             'success' => true,
-            'redirect_to' => route('pessoas.index')
+            'redirect_to' => route('pessoa.index')
         ]);
     }
 }

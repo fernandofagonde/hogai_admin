@@ -33,17 +33,17 @@ Route::get('/home', function () {
 
 /*
     |--------------------------------------------------------------------------
-    | Pessoas
+    | Pessoa
     |--------------------------------------------------------------------------
     */
-$prefix = 'pessoas';
-$controller = 'PessoasController';
+$prefix = 'pessoa';
+$controller = 'PessoaController';
 
 Route::group(['prefix' => $prefix, 'as' => $prefix . '.'], function () use ($controller) {
-    Route::get('/',          [App\Http\Controllers\PessoasController::class, 'index'])->name('pessoas.index');
-    Route::get('/create',    [App\Http\Controllers\PessoasController::class, 'create'])->name('pessoas.create');
-    Route::post('/',         [App\Http\Controllers\PessoasController::class, 'store'])->name('pessoas.store');
-    Route::get('/{id}/edit', [App\Http\Controllers\PessoasController::class, 'edit'])->name('pessoas.edit');
-    Route::put('/{id}',      [App\Http\Controllers\PessoasController::class, 'update'])->name('pessoas.update');
-    Route::delete('/{id}',   [App\Http\Controllers\PessoasController::class, 'destroy'])->name('pessoas.destroy');
+    Route::get('/',          [App\Http\Controllers\PessoaController::class, 'index'])->name('pessoa.index');
+    Route::get('/create',    [App\Http\Controllers\PessoaController::class, 'create'])->name('pessoa.create');
+    Route::post('/',         [App\Http\Controllers\PessoaController::class, 'store'])->name('pessoa.store');
+    Route::get('/{id}/edit', [App\Http\Controllers\PessoaController::class, 'edit'])->name('pessoa.edit');
+    Route::put('/{id}',      [App\Http\Controllers\PessoaController::class, 'update'])->name('pessoa.update');
+    Route::delete('/{id}',   [App\Http\Controllers\PessoaController::class, 'destroy'])->name('pessoa.destroy');
 });

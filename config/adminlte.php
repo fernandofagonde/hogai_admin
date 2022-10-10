@@ -172,7 +172,7 @@ return [
     'classes_auth_body' => '',
     'classes_auth_footer' => '',
     'classes_auth_icon' => '',
-    'classes_auth_btn' => 'btn-flat btn-primary',
+    'classes_auth_btn' => 'btn btn-primary btn-block',
 
     /*
     |--------------------------------------------------------------------------
@@ -304,7 +304,7 @@ return [
         ],
         [
             'text'        => 'Dashboard',
-            'url'         => 'admin/pages',
+            'url'         => '/home',
             'icon'        => 'far fa-fw fa-file',
             'label'       => 4,
             'label_color' => 'success',
@@ -318,7 +318,7 @@ return [
                     'text' => 'Cadastros',
                     'icon'    => 'fas fa-fw fa-plus-square',                    
                     'label'       => 4,
-                    'url'  => '#',
+                    'url'  => '/pessoa',
                 ],                
                 [
                     'text' => 'Relatórios',
